@@ -1,3 +1,3 @@
 # mergeable-test
 
-test repo for developing mergeable 12345
+test repo for developing mergeable 123456

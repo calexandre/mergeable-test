@@ -1,6 +1,6 @@
 version: 2
 mergeable:
-  - when: issue_comment.*
+  - when: issue_comment.created
     validate:
       - do: comment
         no_empty:

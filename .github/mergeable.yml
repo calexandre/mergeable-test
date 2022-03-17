@@ -12,9 +12,6 @@ mergeable:
         must_include:
           regex: 'test'
           message: "comment must_include message"
-        no_empty:
-          enabled: true
-          message: Description matter and should not be empty. Provide detail with **what** was changed, **why** it was changed, and **how** it was changed.
     pass:
       - do: comment
         payload:

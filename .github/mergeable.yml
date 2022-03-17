@@ -24,8 +24,8 @@ mergeable:
         payload:
           body: |
             ## ⚠ resources will be destroyed
-            - 💣 Your plan will **destroy** resources. 
-            - 👮‍♂️ I've been ordered to request an extra approval just to make sure.
+            - 💣 I detected that your plan will **destroy** resources. 
+            - 👮‍♂️ I've been ordered to request extra approvals just to make sure.
         leave_old_comment: true
     # error: # list of actions to be executed when at least one validator throws an error. Specify one or more. Omit this tag if no actions are needed.
     #   - do: comment

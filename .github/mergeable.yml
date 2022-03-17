@@ -9,9 +9,11 @@ mergeable:
           message: "some message related to author filter"
     validate:
       - do: comment
-        must_include:
-          regex: 'test'
-          message: "comment must_include message"
+        must_exclude:
+          regex:
+            - "Plan: [0-9]+ to add, [0-9]+ to change, [1-9]+ to destroy\\."
+          message: |
+            "You terraform plan is going to destroy resources. You'll need an extra approval."
     pass:
       - do: comment
         payload:

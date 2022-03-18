@@ -1,5 +1,11 @@
 version: 2
 mergeable:
+  - when: pull_request.*, pull_request_review.*
+    name: 'Approval check'
+    validate:
+      - do: approvals
+        min:
+          count: 1
   - when: issue_comment.*
     name: "Check if Atlantis wants to destroy resources"
     filter:
@@ -26,7 +32,9 @@ mergeable:
             ## ⚠ resources will be destroyed
             - 💣 I detected that your plan will **destroy** resources. 
             - 👮‍♂️ I've been ordered to request extra approvals just to make sure.
-        leave_old_comment: true
+        leave_old_comment: false
+      - do: request_review
+        reviewers: ['pfilourenco']
     # error: # list of actions to be executed when at least one validator throws an error. Specify one or more. Omit this tag if no actions are needed.
     #   - do: comment
     #     payload:
